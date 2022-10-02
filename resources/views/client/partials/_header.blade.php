@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li>
-                <a href="contact.html">
+                <a href="{{route('contac')}}">
                 Liên Hệ
                 </a>
             </li>
@@ -65,7 +65,7 @@
                 </ul>
                 @endforeach
                 <li class="nav-item">
-                <a class="nav-link" href="{{route('contac')}}">Contact</a>
+                <a class="nav-link" href="{{route('contac')}}">Liên hệ</a>
                 </li>
             </ul>
             </div>

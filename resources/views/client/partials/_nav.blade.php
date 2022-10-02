@@ -3,13 +3,13 @@
         <div class="container">
           <div class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
-              <h2>Shop Category</h2>
-              <p>Very us move be blessed multiply night</p>
+              <h2>Danh mục cửa hàng</h2>
+              <!-- <p>Very us move be blessed multiply night</p> -->
             </div>
             <div class="page_link">
-              <a href="index.html">Home</a>
-              <a href="category.html">Shop</a>
-              <a href="category.html">Women Fashion</a>
+              <a href="index.html">Trang chủ</a>
+              <a href="category.html">Sản phẩm</a>
+              <a href="category.html">Tên danh mục</a>
             </div>
           </div>
         </div>

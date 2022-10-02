@@ -28,7 +28,6 @@ Route::prefix('/')->group(function () {
     Route::get('/cateitem/{id}',[ClientController::class,'getProByCateItem'])->name('getProByCateItem');
     Route::get('product/{id}',[ClientController::class,'getProById'])->name('getProById');
     Route::get('contac',[ClientController::class,'contac'] )->name('contac');
-
 });
 Route::get('/checkout', function () {
     return view('client/checkout');

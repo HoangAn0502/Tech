@@ -1,10 +1,12 @@
 @extends('client.master')
 @section('title','Danh mục')
 @section('content')
-@include('client/partials/_nav')
 <!--================Home Banner Area =================-->
 <section class="section_gap">
     <div class="container">
+      <div class="row">
+        <!-- Bannel -->
+      </div>
       
 
 
@@ -68,9 +70,14 @@
           </div>
         </div>
       </div>
-      <div class="d-none d-sm-block mb-5 pb-4">
-        <div id="map" style="height: 480px;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.1374988314938!2d108.16966138988002!3d16.07428885033731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218e6e07b1c3f%3A0x459e4bf5a2af323e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyDEkMOgIE7hurVuZw!5e0!3m2!1svi!2s!4v1664677507528!5m2!1svi!2s" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="d-none d-sm-block mb-5 pb-4  " style="height:300px">
+        <div id="map" style=" width: 49%; height: 380px; float: left;" >
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.1374988314938!2d108.16966138988002!3d16.07428885033731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218e6e07b1c3f%3A0x459e4bf5a2af323e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyDEkMOgIE7hurVuZw!5e0!3m2!1svi!2s!4v1664677507528!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div id="map" style=" width: 49%; height: 380px;  float: right;"  >
+        <iframe src="https://youtube.com/embed/S7ElVoYZN0g" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         </div>
         <script>
           function initMap() {
