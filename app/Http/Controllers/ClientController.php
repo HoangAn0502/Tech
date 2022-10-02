@@ -19,6 +19,13 @@ class ClientController extends Controller
     {
         return view('client.pages.index');
     }
+    //view contact
+
+    public function contac()
+    {
+        return view('client.pages.contact');
+    }
+
     public function getProByCate($id)
     {
         $listPro=Categories::find($id)->Products;

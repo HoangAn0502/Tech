@@ -27,12 +27,14 @@ Route::prefix('/')->group(function () {
     Route::get('/category/{id}',[ClientController::class,'getProByCate'])->name('getProByCate');
     Route::get('/cateitem/{id}',[ClientController::class,'getProByCateItem'])->name('getProByCateItem');
     Route::get('product/{id}',[ClientController::class,'getProById'])->name('getProById');
+    Route::get('contac',[ClientController::class,'contac'] )->name('contac');
+
 });
 Route::get('/checkout', function () {
     return view('client/checkout');
 });
 Route::get('/contact', function () {
-    return view('client/contact');
+    return view('client/pages/contact');
 });
 Route::get('/single-blog', function () {
     return view('client/single-blog');
@@ -43,6 +45,7 @@ Route::get('/single-product', function () {
 Route::get('/tracking', function () {
     return view('client/tracking');
 });
+
 Route::get('cateItems',[ProductController::class,'loadCateItem'])->name('CateItems');
 // admin
 Route::prefix('admin')->group(function () {

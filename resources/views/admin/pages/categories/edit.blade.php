@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title">Thêm mới danh mục</h4>
                 <p class="card-description">
-                Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row
+                <!-- Use the <code>.form-inline</code> class to display a series of labels, form controls, and buttons on a single horizontal row -->
                 </p>
                 <form method="POST" action="{{route('editCate')}}" enctype="multipart/form-data" class="form-inline">
                   @csrf
