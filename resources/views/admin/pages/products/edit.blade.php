@@ -88,8 +88,8 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="exampleSelectGender">Trạng thái</label>
-                      <select class="form-control" name="status" id="exampleSelectGender">
-                        @if ($pro->status==0)
+                      <select class="form-control" name="view" id="exampleSelectGender">
+                        @if ($pro->view==0)
                           <option value="0" selected>Hiển thị</option>
                           <option value="1">Ẩn</option>
                         @else

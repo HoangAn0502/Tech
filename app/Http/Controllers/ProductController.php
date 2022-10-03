@@ -49,7 +49,7 @@ class ProductController extends Controller
         $pro->quantity=$r->quantity;
         $pro->detail=$r->detail;
         $pro->hot=$r->hot;
-        $pro->status=$r->status;
+        $pro->view=$r->view;
         $pro->save();
 
         return redirect(route('listPro'));
@@ -84,7 +84,7 @@ class ProductController extends Controller
         $pro->quantity=$request->quantity;
         $pro->detail=$request->detail;
         $pro->hot=$request->hot;
-        $pro->status=$request->status;
+        $pro->view=$request->view;
         $pro->save();
         
         return redirect(route('listPro'));

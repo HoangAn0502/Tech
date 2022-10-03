@@ -76,7 +76,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="exampleSelectGender">Trạng thái</label>
-                      <select class="form-control" name="status" id="exampleSelectGender">
+                      <select class="form-control" name="view" id="exampleSelectGender">
                         <option value="0" selected>Hiển thị</option>
                         <option value="1">Ẩn</option>
                       </select>
