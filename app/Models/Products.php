@@ -16,11 +16,10 @@ class Products extends Model
         'image'=>'',
         'discount'=>0,
         'hot'=> 0,
-        'view'=> 0,
-        'status'=>0
+        'view'=> 0
     ];
     protected $fillable = [
-        'name','cate_id','price','discount','image','date','view','quantity','detail','hot','status'
+        'name','cate_id','price','discount','image','date','view','quantity','detail','hot'
     ];
 
     public function Categories()
