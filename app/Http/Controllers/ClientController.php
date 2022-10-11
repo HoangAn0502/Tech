@@ -7,6 +7,8 @@ use App\Models\Categories;
 use App\Models\CateItems;
 use App\Models\Products;
 use App\Models\Comments;
+use App\Models\User;
+use DB;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -48,8 +50,15 @@ class ClientController extends Controller
     {
         $pro=Products::find($id);
         $images=Products::find($id)->Images;
-        return view('client.pages.product',['pro'=>$pro,'images'=>$images ]);
+
+        $com=Comments::all()->where('pro_id','=',$pro->id);
+
+        $comm = DB::table('comments')->join('users' , 'users.id', '=', 'comments.user_id')->select('comments.*', 'users.name')->where('pro_id','=',$pro->id)->get();
+
+        return view('client.pages.product',['pro'=>$pro,'images'=>$images, 'com'=>$com, 'comm'=>$comm]);
     }
+
+
 
     // Tìm kiếm
     public function search(){

@@ -336,6 +336,7 @@
                   </div>
                 </div>
                 <div class="review_list">
+                @foreach ($comm as $com)
                   <div class="review_item">
                     <div class="media">
                       <div class="d-flex">
@@ -345,7 +346,8 @@
                         />
                       </div>
                       <div class="media-body">
-                        <h4>Blake Ruiz</h4>
+                        <h4>{{$com->name}} {{$com->created_at}}</h4> 
+                        
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -354,13 +356,11 @@
                       </div>
                     </div>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
+                    {{$com->content}}
                     </p>
                   </div>
-                  <div class="review_item">
+                  @endforeach
+                  <!-- <div class="review_item">
                     <div class="media">
                       <div class="d-flex">
                         <img
@@ -407,7 +407,7 @@
                       aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                       ullamco laboris nisi ut aliquip ex ea commodo
                     </p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="col-lg-6">
@@ -512,6 +512,7 @@
                     </div>
                     
                   @endif
+                 
                   
                 </div>
               </div>
