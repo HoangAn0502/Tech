@@ -24,7 +24,8 @@ Route::get('/cart', function () {
 });
 Route::prefix('/')->group(function () {
     Route::get('/',[ClientController::class,'index'] )->name('index');
-    Route::get('/category/{id}',[ClientController::class,'getProByCate'])->name('getProByCate');
+    Route::get('/category/{id}',[ClientController::class,'
+    '])->name('getProByCate');
     Route::get('/cateitem/{id}',[ClientController::class,'getProByCateItem'])->name('getProByCateItem');
     Route::get('product/{id}',[ClientController::class,'getProById'])->name('getProById');
     Route::get('contac',[ClientController::class,'contac'] )->name('contac');
@@ -45,7 +46,13 @@ Route::get('/tracking', function () {
     return view('client/tracking');
 });
 
+Route::get('/search',[ClientController::class,'search'] )->name('search');
+
 Route::get('cateItems',[ProductController::class,'loadCateItem'])->name('CateItems');
+
+Route::post('/product/comment/{id}',[ClientController::class,'store'])->name('store');
+
+
 // admin
 Route::prefix('admin')->group(function () {
     Route::prefix('products')->group(function () {

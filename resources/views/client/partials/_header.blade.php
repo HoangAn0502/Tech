@@ -41,9 +41,9 @@
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
@@ -72,10 +72,44 @@
 
             <div class="col-lg-5 pr-0">
             <ul class="nav navbar-nav navbar-right right_nav pull-right">
-                <li class="nav-item">
-                <a href="#" class="icons">
-                    <i class="ti-search" aria-hidden="true"></i>
-                </a>
+                <style>
+                    .has-search .form-control {
+                        
+                    }
+
+                </style>
+
+                <!-- search ân -->
+                    <div style="float: left; width: 66%; height:10px;" class="collapse" id="collapseExample">
+                        <div style=" border: none; padding: 1.05rem;" class="card card-body" >
+                            <!-- code -->
+                            <form action="{{url('search')}}" method="GET">
+                                @csrf
+                                <div class="input-group">
+                                    <input style="margin-top: 2%;" name="keywords" type="search" class="form-control" placeholder="Nhập từ khóa..">
+                                    <!-- <div style="margin-top: 2%;" class="input-group-append">
+                                        <button class="btn btn-secondary" type="button">
+                                            <a href=""><i class="ti-search"></i></a> 
+                                        </button>
+                                    </div> -->
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                <li class="nav-item"  role="presentation">
+                    
+                <!-- <a href="#" class="icons"> -->
+                    <!-- <i class="ti-search" aria-hidden="true"></i> -->
+                    <!-- <button style="border: none; width: 100%; height: 100%; background color: White;" class="icons" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="ti-search" aria-hidden="true"></i>
+                    </button> -->
+                    <!-- search -->
+                    <a style="border: none; width: 100%; height: 100%; margin: 15% 0% 0% 0%; " class="icons" data-toggle="collapse" href="#collapseExample" role="right" aria-expanded="false" aria-controls="collapseExample">
+                        <i class="ti-search" aria-hidden="true"></i>
+                    </a>
+                    
+                <!-- </a> -->
                 </li>
 
                 <li class="nav-item">
