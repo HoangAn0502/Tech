@@ -3,6 +3,7 @@
 @section('content')
 
 <section style="padding: 80px 0px;" class="cat_product_area section_gap">
+    
       <div class="container">
         <div class="row flex-row-reverse">
           <div class="col-lg-9">
@@ -18,12 +19,16 @@
                   <option value="2">Trình diễn 14</option>
                   <option value="4">Trình diễn 16</option>
                 </select>
+                <div style="float: left; clear: both; padding: 6% 0% 1% 3%; margin: -3%;">
+                    <h4 style="font-size: 130%;">{{$MesSearch}}</h4>
+                </div>
               </div>
+              
             </div>
             
             <div class="latest_product_inner">
               <div class="row">
-                @foreach ($listPro as $pro)
+                @foreach ($listSearch as $pro)
                 <div class="col-lg-4 col-md-6">
                   <div class="single-product">
                     <div class="product-img">

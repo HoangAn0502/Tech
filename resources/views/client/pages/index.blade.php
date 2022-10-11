@@ -77,12 +77,12 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
+            @foreach($homeTopPr as $pro)
             <div class="col-lg-4 col-md-6">
                 <div class="single-product">
                     <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/feature-product/f-p-1.jpg" alt="" />
+                        <img class="img-fluid w-100" src="{{asset('images/products/'.$pro->image)}}" alt="" />
                         <div class="p_icon">
                             <a href="#">
                                 <i class="ti-eye"></i>
@@ -96,72 +96,17 @@
                         </div>
                     </div>
                     <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
+                        <a href="{{Route('getProById',$pro->id)}}" class="d-block">
+                            <h4>{{$pro->name}}</h4>
                         </a>
                         <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
+                            <span class="mr-4">{{$pro->price}}</span>
+                            <del>{{$pro->discount}}</del>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/feature-product/f-p-2.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Ví nữ màu đỏ</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/feature-product/f-p-3.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Đồng hồ thông minh dành cho nam tạo mẫu</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -199,22 +144,23 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="new_product">
-                    <h5 class="text-uppercase">Bộ sưu tập năm 2019</h5>
-                    <h3 class="text-uppercase">Áo thun nam mùa hè</h3>
+                    <h5 class="text-uppercase">{{ $homeNewPr[0]->Cate_items->name }}</h5>
+                    <h3 class="text-uppercase">{{ $homeNewPr[0]->name }}</h3>
                     <div class="product-img">
-                        <img class="img-fluid" src="../img/product/new-product/new-product1.png" alt="" />
+                        <img class="img-fluid" src="{{asset('images/products/'.$homeNewPr[0]->image)}}" alt="" />
                     </div>
                     <h4>$120.70</h4>
                     <a href="#" class="main_btn">Thêm vào giỏ hàng</a>
                 </div>
             </div>
-
+         
             <div class="col-lg-6 mt-5 mt-lg-0">
                 <div class="row">
+                    @for($i=1;$i<count($homeNewPr);$i++)
                     <div class="col-lg-6 col-md-6">
                         <div class="single-product">
                             <div class="product-img">
-                                <img class="img-fluid w-100" src="../img/product/new-product/n1.jpg" alt="" />
+                                <img class="img-fluid w-100" src="{{asset('images/products/'.$homeNewPr[$i]->image)}}" alt="" />
                                 <div class="p_icon">
                                     <a href="#">
                                         <i class="ti-eye"></i>
@@ -228,100 +174,17 @@
                                 </div>
                             </div>
                             <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Giày thể thao mới nhất của Nike</h4>
+                                <a href="{{Route('getProById',$homeNewPr[$i])}}" class="d-block">
+                                    <h4>{{$homeNewPr[$i]->name}}</h4>
                                 </a>
                                 <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
+                                    <span class="mr-4">{{$homeNewPr[$i]->price}}</span>
+                                    <del>{{$homeNewPr[$i]->discount}}</del>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="../img/product/new-product/n2.jpg" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>Quần jean nam denim</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="../img/product/new-product/n3.jpg" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>đồng hồ thạch anh</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <img class="img-fluid w-100" src="../img/product/new-product/n4.jpg" alt="" />
-                                <div class="p_icon">
-                                    <a href="#">
-                                        <i class="ti-eye"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-heart"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ti-shopping-cart"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-btm">
-                                <a href="#" class="d-block">
-                                    <h4>giày thể thao adidas</h4>
-                                </a>
-                                <div class="mt-3">
-                                    <span class="mr-4">$25.00</span>
-                                    <del>$35.00</del>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endfor
                 </div>
             </div>
         </div>
@@ -335,17 +198,18 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="main_title">
-                    <h2><span>Sản phẩm truyền cảm hứng</span></h2>
+                    <h2><span>Laptop khuyến mãi</span></h2>
                     <p>Mang được gọi là hạt giống đầu tiên của thứ ba cho chính nó bây giờ đề cập</p>
                 </div>
             </div>
         </div>
 
         <div class="row">
+            @foreach($homeSalePr as $pro)
             <div class="col-lg-3 col-md-6">
                 <div class="single-product">
                     <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i1.jpg" alt="" />
+                        <img class="img-fluid w-100" src="{{asset('images/products/'.$pro->image)}}" alt="" />
                         <div class="p_icon">
                             <a href="#">
                                 <i class="ti-eye"></i>
@@ -359,212 +223,17 @@
                         </div>
                     </div>
                     <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
+                        <a href="{{Route('getProById',$pro->id)}}" class="d-block">
+                            <h4>{{$pro->name}}</h4>
                         </a>
                         <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
+                            <span class="mr-4">{{$pro->price}}</span>
+                            <del>{{$pro->discount}}</del>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i2.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i3.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i4.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i5.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i6.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i7.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <div class="product-img">
-                        <img class="img-fluid w-100" src="../img/product/inspired-product/i8.jpg" alt="" />
-                        <div class="p_icon">
-                            <a href="#">
-                                <i class="ti-eye"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-heart"></i>
-                            </a>
-                            <a href="#">
-                                <i class="ti-shopping-cart"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-btm">
-                        <a href="#" class="d-block">
-                            <h4>Giày sneaker nam mới nhất</h4>
-                        </a>
-                        <div class="mt-3">
-                            <span class="mr-4">$25.00</span>
-                            <del>$35.00</del>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach 
         </div>
     </div>
 </section>
