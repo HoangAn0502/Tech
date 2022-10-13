@@ -13,7 +13,6 @@ class Comments extends Model
     public $timestamps = true;
     protected $date= 'time';
     protected $attributes = [
-        'status'=> 0,
         'rate'=> 0
     ];
     protected $fillable = [
