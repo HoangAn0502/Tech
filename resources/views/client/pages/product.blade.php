@@ -273,70 +273,78 @@
                   <div class="col-6">
                     <div class="box_total">
                       <h5>Tổng thể</h5>
-                      <h4>4.0</h4>
-                      <h6>(03 Nhận xét)</h6>
+                      <h4>{{$Round}}</h4>
+                      <h6>({{$coutall}} Nhận xét)</h6>
                     </div>
                   </div>
                   <div class="col-6">
                     <div class="rating_list">
-                      <h3>Dựa trên 3 nhận xét</h3>
+                      <h3>Dựa trên {{$coutall}} nhận xét</h3>
+                      
                       <ul class="list">
                         <li>
-                          <a href="#"
-                            >5 sao
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
+                          <a>
+                            5 sao
+                              <?php
+                                for ($i = 0; $i < 5; $i++){
+                                    echo '<i class="fa fa-star"></i>';
+                                }
+                              ?> 
+                              
+                            {{$cout5}}
+                          </a>
                         </li>
                         <li>
-                          <a href="#"
-                            >4 sao
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
+                          <a>
+                            4 sao
+                              <?php
+                                for ($i = 0; $i < 4; $i++){
+                                    echo '<i class="fa fa-star"></i>';
+                                }
+                              ?> 
+                            {{$cout4}}
+                          </a>
                         </li>
                         <li>
-                          <a href="#"
-                            >3 sao
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
+                          <a>
+                            3 sao
+                              <?php
+                                for ($i = 0; $i < 3; $i++){
+                                    echo '<i class="fa fa-star"></i>';
+                                }
+                              ?> 
+                            {{$cout3}}
+                            
+                          </a>
                         </li>
                         <li>
-                          <a href="#"
-                            >2 sao
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
+                          <a>
+                            2 sao
+                              <?php
+                                for ($i = 0; $i < 2; $i++){
+                                    echo '<i class="fa fa-star"></i>';
+                                }
+                              ?>                               
+                            {{$cout2}}
+                          </a>
                         </li>
                         <li>
-                          <a href="#"
-                            >1 sao
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
+                          <a>
+                            1 sao
+                              <?php
+                                for ($i = 0; $i < 1; $i++){
+                                    echo '<i class="fa fa-star"></i>';
+                                }
+                              ?> 
+                            {{$cout1}}
+                          </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div class="review_list">
-                @foreach ($comm as $com)
+                @foreach ($comm as $com) 
                   <div class="review_item">
                     <div class="media">
                       <div class="d-flex">
@@ -346,20 +354,21 @@
                         />
                       </div>
                       <div class="media-body">
-                        <h4>{{$com->name}} {{$com->created_at}}</h4> 
+                        <h4>{{$com->name}} | {{$com->created_at}}</h4> 
                         
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+                        <?php
+                        for ($i = 0; $i < $com->status; $i++){
+                            echo '<i class="fa fa-star"></i>';
+                        }?>
                       </div>
                     </div>
-                    <p>
+                    <p style="margin-left:3%">
                     {{$com->content}}
                     </p>
                   </div>
                   @endforeach
+                  
+                  
                   <!-- <div class="review_item">
                     <div class="media">
                       <div class="d-flex">
@@ -414,41 +423,99 @@
                 <div class="review_box">
                   <h4>Thêm bài đánh giá</h4>
                   <!-- Đánh giá sao -->
-                  <p>Đánh giá của bạn:</p>
-                  <ul class="list">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <p>Vượt trội</p>
-
-                  <!--Bình luận-->
                   
+                  <!--Bình luận-->
                   @if(isset($user))
-                  <form class="row contact_form" action="/product/comment/{{$pro->id}}" method="post" id="contactForm" novalidate="novalidate">
+                  <form class="row contact_form" action="/product/comment/{{$pro->id}}" method="post" id="contactForm form-product" novalidate="novalidate">
                     @csrf
+                    <p style="margin-left: 3%">Đánh giá của bạn:</p>
+                    <ul class="list">
+                      <!-- CSS -->
+                      <style>
+                        .rating {
+                            display: flex;
+                            flex-direction: row-reverse;
+                            justify-content: center;
+                        }
+
+                        .rating > input{ display:none;}
+
+                        .rating > label {
+                            position: relative;
+                                width: 1em;
+                                font-size: 2vw;
+                                color: #FFD600;
+                                cursor: pointer;
+                        }
+                        .rating > label::before{ 
+                            content: "\2605";
+                            position: absolute;
+                            opacity: 0;
+                          }
+                        .rating > label:hover:before,
+                        .rating > label:hover ~ label:before {
+                            opacity: 1 !important;
+                        }
+
+                        .rating > input:checked ~ label:before{
+                            opacity:1;
+                        }
+
+                        .rating:hover > input:checked ~ label:before{ opacity: 0.4; }
+
+
+
+                        p{ font-size: 1.2rem;}
+                        @media only screen and (max-width: 600px) {
+                            h1{font-size: 14px;}
+                            p{font-size: 12px;}
+                        }
+                    </style>
+                      <!-- End css -->
+                      <!-- sta -->
+                      <div class="rating">
+                        <input type="radio" name="rating status" value="5" id="5"><label for="5">☆</label>
+                        <input type="radio" name="rating status" value="4" id="4"><label for="4">☆</label>
+                        <input type="radio" name="rating status" value="3" id="3"><label for="3">☆</label>
+                        <input type="radio" name="rating status" value="2" id="2"><label for="2">☆</label>
+                        <input type="radio" name="rating status" value="1" id="1"><label for="1">☆</label>
+                      </div>
+                      <div>
+
+                      </div>
+                      <!-- end sta -->
+
+
+
+
+
+                      <!-- <li>
+                        <a href="#">
+                          <i name="" class="fa fa-star"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-star"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-star"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-star"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-star"></i>
+                        </a>
+                      </li> -->
+                    </ul>
+
                     <!-- <div class="col-md-12">
                       <div class="form-group">
                         <input
@@ -507,10 +574,9 @@
                   @else
                     <div>
                       <br>
-                      <h4>Đăng cần nhập để bình luận</h4><br>
-                      <a class="btn submit_btn" href="">Đăng nhập </a>...<a class="btn submit_btn" href=""> Đăng kí</a>
+                      <h4>Bạn cần đăng nhập để bình luận</h4> <br>
+                      <a class=" btn submit_btn" href="">Đăng nhập</a>...<a class="btn submit_btn" href="">Đăng kí</a>
                     </div>
-                    
                   @endif
                  
                   
